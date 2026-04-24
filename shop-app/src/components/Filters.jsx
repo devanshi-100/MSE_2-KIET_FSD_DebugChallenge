@@ -37,7 +37,7 @@ export default function Filters({ priceRange, onPriceChange, category, onCategor
         <ul className="price-list">
           {PRICE_RANGES.map(range => {
             const key = `${range.min}-${range.max}`;
-            const isActive = priceRange.min === range.min && priceRange.max === range.max;                           //=== --> <=
+            const isActive = priceRange.min === range.min && priceRange.max === range.max;                   
             return (
               <li key={key}>
                 <button
