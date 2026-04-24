@@ -37,7 +37,7 @@ export default function Filters({ priceRange, onPriceChange, category, onCategor
         <ul className="price-list">
           {PRICE_RANGES.map(range => {
             const key = `${range.min}-${range.max}`;
-            const isActive = priceRange.min === range.min && priceRange.max === range.max;
+            const isActive = priceRange.min === range.min && priceRange.max === range.max;                           //=== --> <=
             return (
               <li key={key}>
                 <button
@@ -56,8 +56,8 @@ export default function Filters({ priceRange, onPriceChange, category, onCategor
         <h3 className="filter-label">Sort By</h3>
         <select className="sort-select" value={sortBy} onChange={e => onSortChange(e.target.value)}>
           <option value="default">Default</option>
-          <option value="price-desc">Price: Low to High</option>
-          <option value="price-asc">Price: High to Low</option>
+          <option value="price-asc">Price: Low to High</option>          //bug 8 //desc--asc
+          <option value="price-desc">Price: High to Low</option>         //bug 8 //asc-- desc -bug 8
           <option value="rating">Highest Rated</option>
           <option value="name">Name: A–Z</option>
         </select>
